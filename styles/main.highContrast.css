@@ -1,0 +1,6 @@
+#mainmenu li i {
+  color: #FFF;
+}
+#mainmenu li:hover i {
+  color: #1D69B2;
+}

@@ -1,0 +1,70 @@
+<div class="container">
+	<div id="intro-tds-lib">
+		<h1><strong>tds-lib</strong> is a set of user interface interactions, effects, widgets, and themes. Whether you're building highly interactive web applications or you just need to add some of the widgets below!</h1>
+		<p class="version">Current Version: v2.0.0</p>
+		<h2>Developed by</h2>
+		<img src="http://tecdigital.itcr.ac.cr:8082/resources/theme-zen/images/global/logo_TD_highContrast.png" alt="Logo Tec Digital">
+	</div>
+	<paper-tabs selected="0" noink>
+		<paper-tab ng-click="setTab('start')">tds-lib</paper-tab>
+		<paper-tab ng-click="setTab('use')">Use tds-lib</paper-tab>
+		<paper-tab ng-click="setTab('implications')">Developer</paper-tab>
+		<paper-tab ng-click="setTab('benefits')">Benefits</paper-tab>
+	</paper-tabs>
+	<div class="main-container" ng-show="actualTab === 'start'">
+		<div class="row">
+			<br>
+			<h1 class="feature-detail">About tds-lib</h1>
+			<p class="default-text" style="text-align: center">tds-lib is a framework that's used by all projects in TEC Digital to standarize the code, and improve a better quality of the visual guidelines.</p>
+			<br>
+			<br>
+			<div class="col-md-4 feature">
+				<img src="images/bootstrap-logo.png">
+				<h2>Based on bootstrap</h2>
+				<p class="default-text">tds-lib reuses some classes from the bootstrap framework, like the grid system or the buttons code.</p>
+			</div>
+			<div class="col-md-4 feature">
+				<img src="images/accesibility-icon.png">
+				<h2>Includes Accesibility features</h2>
+				<p class="default-text">tds-lib provides a set of accesibility features, like high contrast mode classes or aria attributes.</p>
+			</div>
+			<div class="col-md-4 feature">
+				<img src="images/components.png" class="components">
+				<h2>Full of features</h2>
+				<p class="default-text">tds-lib includes CSS and HTML components that allows you to reuse the code.</p>
+			</div>
+		</div>
+	</div>
+	<div ng-show="actualTab === 'use'">
+		<br>
+		<h1 class="feature-detail">Using tds-lib in your project</h1>
+		<p class="default-text" style="text-align: center">tds-lib is a framework that's used by all projects in TEC Digital to standarize the code, and improve a better quality of the visual guidelines.</p>
+		<br>
+		<br>
+		<p class='default-text'>
+			An overview of tds-lib the TEC-Digital standard library, how to download and use, basic templates, examples, and more.
+		</p>
+		<p class='default-text'>
+			<strong>tds-lib</strong> is a set of user interface interactions, effects, widgets, and themes. Whether you're building highly interactive web applications or you just need to add some of the widgets below!
+		</p>
+		<p class='default-text'>
+			To add tds-lib into your website what you need is just a single line of code. You don't even have to download or install anything!
+		</p>
+		<p class='default-text'>
+			Paste the following code into the section of your site's HTML.
+		</p>
+		<pre style='background:rgba(238,238,238,0.92);color:#000'><span style='color:#03c'>&lt;<span style='font-weight:700'>link</span> <span style='color:#36c;font-style:italic'>rel</span>=<span style='color:#093'>'stylesheet'</span> <span style='color:#36c;font-style:italic'>href</span>=<span style='color:#093'>'/resources/tds-lib/css/tds-lib.css'</span>&gt;</span></pre>
+		<p class='default-text'>
+			Paste the following code if you want to use the font icons.
+		</p>
+		<pre style='background:rgba(238,238,238,0.92);color:#000'><span style='color:#03c'>&lt;<span style='font-weight:700'>link</span> <span style='color:#36c;font-style:italic'>rel</span>=<span style='color:#093'>'stylesheet'</span> <span style='color:#36c;font-style:italic'>href</span>=<span style='color:#093'>'/resources/tds-lib/css/tds-fonts.css'</span>&gt;</span></pre>
+		<p class='default-text'>
+			Paste the following code if you want to use the spinner, validations, tabs and javascript selects.
+		</p>
+		<pre style='background:rgba(238,238,238,0.92);color:#000'><span style='color:#03c'>&lt;<span style='font-weight:700'>script</span> <span style='color:#36c;font-style:italic'>src</span>=<span style='color:#093'>'/resources/tds-lib/js/tds-lib.js'</span>&gt;&lt;/<span style='font-weight:700'>script</span>&gt;</span></pre>
+	</div>
+</div>
+<link rel="import" href="resources/lib/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="resources/lib/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="resources/lib/paper-tabs/paper-tabs.html">
+<link rel="import" href="resources/lib/paper-tabs/paper-tab.html">

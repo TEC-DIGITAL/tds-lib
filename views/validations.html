@@ -1,0 +1,26 @@
+<h1 class="page-header">Validations</h1>
+
+<h1>Number Input</h1>
+<p>Use 'tds-lib_form' class for Number Input.</p>
+
+<div class="form-group">
+	<label for="numberInput" class="tds-lib_form">Input Label</label>
+	<input id="numberInput" type="text" class="tds-lib_form" placeholder="Enter the text">
+</div>
+
+<h2>HTML</h2>
+<code style="margin-left:px;">        &lt;div class="form-group"&gt;</code><br>
+	<code style="margin-left:25px;">&lt;code style="margin-left:px;"&gt;          &lt;label for="numberInput" class="tds-lib_form"&gt;Input Label&lt;/label&gt;&lt;/code&gt;&lt;br&gt;</code><br>
+	<code style="margin-left:25px;">          &lt;input id="numberInput" type="text" class="tds-lib_form" placeholder="Enter the text"&gt;</code><br>
+<code style="margin-left:px;"> &lt;/div&gt;</code><br>
+
+<h2>JavaScript</h2>
+
+<p>Get the input element that you want to use as number input</p>
+	<pre style="background:rgba(238,238,238,0.92);color:#000"> <span style="color:#00f">var</span> mynumberInput <span style="color:#00f">=</span> <span style="color:#00f">new</span> tds_lib.NumberInput(document.getElementById(<span style="color:#093">"numberInput"</span>)); </pre>
+
+<h3>Methods</h3>
+<pre style="background:rgba(238,238,238,0.92);color:#000">mynumberInput.setMaxValue(1000)<span style="color:#00f">;</span>
+mynumberInput.setMinValue(-50)<span style="color:#00f">;</span>
+mynumberInput.setInputValue(<span style="color:#093">"-40,2"</span>)<span style="color:#00f">;</span>
+</pre>

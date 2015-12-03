@@ -1,0 +1,959 @@
+/*  -------------------------------------------------------------
+  Typography
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.tds-lib_title_01 {
+	color: #000;
+	font-size: 2em;
+}
+.tds-lib_title_02 {
+	color: #004379;
+	font-size: 1.5em;
+}
+.tds-lib_title_03 {
+	color: #808081;
+	font-size: 1.5em;
+}
+.tds-lib_title_04 {
+	color: #4E4E4E;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.tds-lib_title_05 {
+	color: #686868;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.tds-lib_title_06 {
+	color: #818181;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.tds-lib_default_text {
+	color: #000;
+	font-size: 1.1em;
+}
+.tds-lib_text_01 {
+	color: #818181;
+	font-size: 1.1em;
+}
+.tds-lib_text_02 {
+	color: #4E4E4E;
+	font-size: 1.1em;
+}
+.tds-lib_text_italic {
+	font-style: italic;
+}
+.tds-lib_text_detail {
+	color: #808080;
+	font-size: 1.1em;
+}
+.tds-lib_text_marker {
+	color: #006AB1;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.tds-lib_text_disabled {
+	color: #CCC;
+	font-size: 1.1em;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  End Typography code
+	------------------------------------------------------------- */
+
+
+/*  -------------------------------------------------------------
+  Tables
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.table > tbody > tr > th {
+    color: #686868;
+    font-size: 1.15em;
+    font-size: bold;
+    text-align: center;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	min-height: 20px;
+}
+.table-striped > tbody > tr:nth-child(2n) > td{
+	background-color: #f1f1f1;
+}
+.table-striped > tbody > tr:nth-child(2n+1) > td{
+	background-color: #ffffff;
+}
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+	background-color: #ffffff;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  End Tables
+	------------------------------------------------------------- */
+
+/*  -------------------------------------------------------------
+  Link elementos
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* ----------------------------------------*/
+/* ----------->>> Standar Class <<<--------*/
+/* ----------------------------------------*/
+.tds-lib_form {
+  height: 35px;
+  padding-left: 8px;
+  margin-top: 6px;
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 1px solid #CDCCCC;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: normal;
+}
+.tds-lib_form:focus{
+  border: 1px solid #1D69B2;
+}
+
+/* ----------------------------------------*/
+/* ------------>>> Simple input <<<---------*/
+/* ----------------------------------------*/
+input.tds-lib_form_long[type=text]{
+  width: 100%;
+  max-width: 100%;
+}
+/* ----------------------------------------*/
+/* ------------>>> Input phone <<<---------*/
+/* ----------------------------------------*/
+input.tds-lib_form_phone[type=text]{
+  background: url("../images/iconos_TEC-Digital_svg/telephone.png") no-repeat center;
+  background-position: 3px center;
+  background-size: 13px 15px;
+  padding-left: 25px;
+}
+
+input.tds-lib_form_phone[type=text]:focus{
+  background-image: url("../images/iconos_TEC-Digital_svg/telephone_focus.png");
+}
+
+/* ----------------------------------------*/
+/* ---------->>> Input cellphone <<<-------*/
+/* ----------------------------------------*/
+input.tds-lib_form_cellphone[type=text]{
+  background: url("../images/iconos_TEC-Digital_svg/cellphone.png") no-repeat center;
+  background-position: 3px center;
+  background-size: 13px 15px;
+  padding-left: 25px;
+}
+
+input.tds-lib_form_cellphone[type=text]:focus{
+  background-image: url("../images/iconos_TEC-Digital_svg/cellphone_focus.png");
+}
+
+
+/* ----------------------------------------*/
+/* ------------->>> Input user <<<---------*/
+/* ----------------------------------------*/
+input.tds-lib_form_username[type=text]{
+  background: url("../images/iconos_TEC-Digital_svg/user.png") no-repeat center;
+  background-position: 3px center;
+  background-size: 13px 15px;
+  padding-left: 25px;
+}
+input.tds-lib_form_username[type=text]:focus{
+  background-image: url("../images/iconos_TEC-Digital_svg/user_focus.png");
+}
+
+/* ----------------------------------------*/
+/* ------------>>> Input email <<<---------*/
+/* ----------------------------------------*/
+input.tds-lib_form[type=email] {
+  background: url("../images/iconos_TEC-Digital_svg/e-mail.png") no-repeat 18px 18px;
+  background-position: 3px center;
+  background-size: 15px 12px;
+  padding-left: 25px;
+}
+input.tds-lib_form[type=email]:focus{
+  background-image: url("../images/iconos_TEC-Digital_svg/e-mail-focus.png");
+}
+
+/* ----------------------------------------*/
+/* -------------->>> Texarea <<<-----------*/
+/* ----------------------------------------*/
+textarea.tds-lib_form {
+  max-width: 100%;
+  width: 100%;
+  max-height: 142px;
+  height: 100%;
+}
+
+/* ----------------------------------------*/
+/* ------------>>> Input file <<<----------*/
+/* ----------------------------------------*/
+input.tds-lib_form[type=file] {
+    background: url('../images/iconos_TEC-Digital_svg/upload.png') no-repeat center;
+    background-size: 18px 20px;
+    height: 25px;
+    width: 0px;
+    cursor: pointer;
+    padding-left: 2rem;
+    padding-right: 0px;
+    border: 0px; 
+}
+input.tds-lib_form[type=file]:focus{ border: 0px; }
+
+/* ----------------------------------------*/
+/* ----->>> Input submit and Button <<<----*/
+/* ----------------------------------------*/
+input.tds-lib_form[type=submit], button.tds-lib_form, .tds-lib_button, :link.tds-lib_button {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #cbd0d5;
+    border-radius: 0.35em;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 38px;
+    line-height: 2.8em;
+    min-width: 4.5em;
+    padding: 0px 1em 2.6em 1em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+
+input.tds-lib_form[type=submit]:hover,button.tds-lib_form:hover,input.tds-lib_form[type=submit]:focus,button.tds-lib_form:focus, a.tds-lib_button:hover {
+  background-color: #eaecee;
+  text-decoration: none;
+  border: solid 1px #cbd0d5;
+  color: #000;
+}
+
+.tds-lib_form.primary, .tds-lib_button.primary {
+  background-color: #00447b;
+  border: solid 1px #00335c;
+  color: #fff;
+}
+.tds-lib_form.primary:hover, .tds-lib_form.primary:active, .tds-lib_form.primary:focus, .tds-lib_button.primary:hover, .tds-lib_button.primary:active, .tds-lib_button.primary:focus {
+  background-color: #00335c;
+  text-decoration: none;
+  border: solid 1px #00335c;
+  color: #fff;
+}
+.tds-lib_form.success, .tds-lib_button.success {
+  background-color: #1eb25d;
+  border: solid 1px #168546;
+  color: #fff;
+}
+.tds-lib_form.success:hover, .tds-lib_form.success:active, .tds-lib_form.success:focus, .tds-lib_button.success:hover, .tds-lib_button.success:active, .tds-lib_button.success:focus {
+  background-color: #168546;
+  text-decoration: none;
+  border: solid 1px #168546;
+  color: #fff;
+}
+.tds-lib_form.warning, .tds-lib_button.warning {
+  background-color: #EC971F;
+  border: solid 1px #D58512;
+  color: #fff;
+}
+.tds-lib_form.warning:hover, .tds-lib_form.warning:active, .tds-lib_form.warning:focus, .tds-lib_button.warning:hover, .tds-lib_button.warning:active, .tds-lib_button.warning:focus {
+  background-color: #D58512;
+  border: solid 1px #D58512;
+  color: #fff;
+}
+.tds-lib_form.danger, .tds-lib_button.danger {
+  background-color: #c62c3b;
+  border: solid 1px #95212c;
+  color: #fff;
+}
+.tds-lib_form.danger:hover, .tds-lib_form.danger:active, .tds-lib_form.danger:focus, .tds-lib_button.danger:hover, .tds-lib_button.danger:active, .tds-lib_button.danger:focus {
+  background-color: #95212c;
+  border: solid 1px #95212c;
+  color: #fff;
+}
+/* MADE FOR VIRTUAL TOURS BY VICTOR VARGAS - 28/07/2015 => .introjs-disabled */
+button.tds-lib_form:disabled,button.tds-lib_form:disabled:hover, a.tds-lib_button:disabled, a:link:disabled.tds-lib_button, a.tds-lib_button.introjs-disabled {
+  color: #CCCCCC;
+  background-color: #FFFFFF;
+  cursor: default;
+}
+
+/* ----------------------------------------*/
+/* ------------->>> Spinner <<<------------*/
+/* ----------------------------------------*/
+
+div.tds-lib_form_spinner{
+  width: 60px;
+  height: 21px;
+  margin-top: 6px;
+}
+div.tds-lib_form_spinner input {
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 1px solid #CDCCCC;
+  border-radius: 4px !important;
+  font-size: 11px;
+  font-family: Helvetica;
+  font-weight: normal;
+}
+div.tds-lib_form_spinner>.input-group-btn-vertical{
+  position: relative;
+  white-space: nowrap;
+  width: 10px;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+div.tds-lib_form_spinner>.input-group-btn-vertical >button {
+ 
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  margin-left: -2px;
+  position: relative;
+  border: none;
+  left: -12px;
+	z-index: 2;
+  height: 15px;
+  font-size: 8px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+div.tds-lib_form_spinner>.input-group-btn-vertical>button:first-child {
+  -moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -o-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -ms-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+
+div.tds-lib_form_spinner>.input-group-btn-vertical >button:last-child {
+  margin-top: -2px;
+  border-bottom-right-radius: 4px;
+}
+
+/* ----------------------------------------*/
+/* -------->>> Radio button svg <<<--------*/
+/* ----------------------------------------*/
+/*input.tds-lib_form[type=radio]{
+  width   : 18px;
+  height: 18px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+	display : none;
+}
+
+input.tds-lib_form[type=radio] + label {
+  display      : inline-block;
+  margin-left  : 0px;
+  padding-left : 25px;
+  background   : url('../images/iconos_TEC-Digital_svg/radio_button.png') no-repeat;
+  line-height  : 18px;
+  background-size: 18px 18px;
+}
+
+input.tds-lib_form[type=radio]:checked + label{
+  background   : url('../images/iconos_TEC-Digital_svg/radio_button_selected.png') no-repeat;
+  background-size: 18px 18px;
+}*/
+
+input.tds-lib_form[type=radio] { display:none; } /* para esconder el radio button */
+input.tds-lib_form[type=radio] + label:before {
+  font-family: tds-lib-icons;
+  display: inline-block;
+}
+
+input.tds-lib_form[type=radio] + label:before { content: "\e67e"; } /* icono radio sin marcar */
+input.tds-lib_form[type=radio] + label:before { letter-spacing: 5px; } /* espacio entre el radio y el label */
+
+input.tds-lib_form[type=radio]:checked + label:before { content: "\e67d"; } /* icono radio marcado */
+
+
+
+/* ----------------------------------------*/
+/* ------------>>> Checkbox <<<------------*/
+/* ----------------------------------------*/
+/*input.tds-lib_form[type=checkbox]{
+  width   : 18px;
+  height: 18px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+  display: none;
+}
+input.tds-lib_form[type=checkbox] + label{
+  display      : inline-block;
+  margin-left  : 0px;
+  padding-left : 25px;
+  background   : url('../images/iconos_TEC-Digital_svg/checkbox.png') no-repeat;
+  line-height  : 18px;
+  background-size: 18px 18px;
+}
+input.tds-lib_form[type=checkbox]:checked + label{
+  background   : url('../images/iconos_TEC-Digital_svg/checkbox_check_selected.png') no-repeat;
+  background-size: 18px 18px;
+}*/
+
+input.tds-lib_form[type=checkbox] { display:none; } /* para esconder el checkbox */
+input.tds-lib_form[type=checkbox] + label:before {
+  font-family: tds-lib-icons;
+  display: inline-block;
+}
+input.tds-lib_form[type=checkbox] + label:before { content: "\e60b"; } /* icono checkbox sin marcar */
+input.tds-lib_form[type=checkbox] + label:before { letter-spacing: 5px; } /* spacio entre el checkbox y el label */
+input.tds-lib_form[type=checkbox]:checked + label:before { content: "\e609"; } /* icono checkbox marcado */
+/* ----------------------------------------*/
+/* ------------->>> Select <<<-------------*/
+/* ----------------------------------------*/
+/*Custom Select */
+div.tds-lib_form_select
+{
+  position:relative;
+  display:inline-block;
+  cursor:default;
+  text-align:left;
+  line-height:35px;
+  clear:both;
+  color: #808081;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  font-family: Helvetica;
+  width:100%;
+}
+
+div.tds-lib_form_select>span:nth-of-type(1)
+{
+  width:100%;
+  text-indent:8px;
+  border:1px solid #ccc;
+  border-right:none;
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  padding-right: 30px;
+  background:#FFFFFF;
+  overflow:hidden;
+  position:relative;
+  float:left;
+  height:35px;
+  z-index:0;
+}
+
+/*Arrow styles*/
+div.tds-lib_form_select>span:nth-of-type(2)
+{
+  width:30px;
+  margin-left: -30px;/*It let us to dont use "calc" to set span width of the current selected value*/
+  border:1px solid #ccc;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  border-left-style: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position:relative;
+  float:left;
+  height:35px;
+  z-index:0;
+  display: inline;
+}
+
+div.tds-lib_form_select>div:nth-of-type(1) {
+  position:absolute;
+  top:32.5px;
+  left:0;
+  width:100%;
+  border:1px solid #ccc;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  /*overflow:hidden;*/
+  background:#FFFFFF;
+  padding-top:2px;
+  display:none;
+  z-index:1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+  
+div.tds-lib_form_select>div:nth-of-type(1)>span {
+  text-indent: 8px;
+  display:block;
+  width:100%;
+  line-height:25px;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+div.tds-lib_form_select>div:nth-of-type(1)>span:hover {
+  color:#FFFFFF;
+  background:#818181; 
+}  
+
+/*Div to be included before insert a 'select' tag*/
+/*
+ div.tds-lib_form{
+    width:190px;
+    overflow:hidden;
+}
+
+div.tds-lib_form>select{
+    color: #808081;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    font-family: Helvetica;
+    width: 200px;
+    height: 35px; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: transparent url("../images/iconos/iconos_TEC-Digital_svg/display.svg") no-repeat;
+    background-position: 160px center;
+}
+
+div.tds-lib_form>select>option{
+    color: #808081;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    font-family: Helvetica;
+    width: 180px;
+    height: 35px; 
+
+}*/
+
+
+/*Div to be included before insert a 'select' tag
+ div.tds-lib_form{ width:190px; overflow:hidden;
+}
+
+div.tds-lib_form>select{
+    color: #808081;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    font-family: Helvetica;
+    width: 200px;
+    height: 35px; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: transparent url("../images/iconos_TEC-Digital_svg/display.png") no-repeat;
+    background-position: 160px center;
+}
+*/
+/* ----------------------------------------*/
+/* ------------->>> Labels <<<-------------*/
+/* ----------------------------------------*/
+label.tds-lib_form,output.tds-lib_form{
+	border: 0px;
+	color: #808081;
+	background-color: #FFFFFF;
+	font-size: 15px;
+  padding-left: 0px;
+  max-width: 100%;
+	font-family: Helvetica;
+	height: 18px;
+	width: auto;
+	display: block;
+}
+
+/* ----------------------------------------*/
+/* ------------->>> Links <<<--------------*/
+/* ----------------------------------------*/
+a.text_url_01{
+  font-family: Helvetica;
+  font-size: 1em;
+  font-style: italic;
+  color: #0764AD;
+  text-decoration:underline
+}
+
+a.text_url_02 {
+  font-family: Helvetica;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #0764AD;
+  text-decoration:underline
+}
+a.text_url_01:hover,a.text_url_02:hover{ color:#000; }
+a.text_url_01:focus,a.text_url_02:focus {
+  outline: 1px dotted #CCC;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	End Link elements
+------------------------------------------------------------- */
+
+
+/*  -------------------------------------------------------------
+  Pop-ups elements
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* overlay styles, all needed */
+.overlay {
+		visibility: hidden;
+		position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+		background: rgba(255,255,255,0.7);
+    z-index: 10;
+}
+.overlay>div>div:first-of-type {
+	display:	inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.tds-lib-pop-up-delimeter{
+	display: block;
+	margin: 0px auto;
+  z-index: 11;
+	height: 100%;
+	max-width: 470px;
+}
+.tds-lib-pop-up-wrapper{
+	padding: 7px;
+	display: inline-block;
+	vertical-align: middle;
+	
+	background-color: #fff;
+	border: 1px solid black;
+	border-radius: 3px;
+	
+	width: 95%;
+	color: #808080;
+	background-color: #FFFFFF;
+	border: 2px solid #CDCCCC;
+	max-height: 470px;
+	/*overflow: auto;*/
+	
+	z-index: 11;
+}
+.tds-lib-pop-up-body {
+	padding: 7px 0px;
+	overflow: auto;
+	max-height: 390px;
+}
+.tds-lib-pop-up-wrapper.tds-lib-large{
+	width: 100%;
+}
+.tds-lib-pop-up-wrapper-example{
+	margin: 0px;
+	padding: 7px;
+	
+	
+	background-color: #fff;
+	border: 1px solid black;
+	max-width: 470px;
+	min-width: 312px;
+
+	max-height: 470px;
+	min-height: 92px;
+
+	color: #808080;
+	background-color: #FFFFFF;
+	border: 2px solid #CDCCCC;
+	border-radius: 3px;
+}
+
+.tds-lib-pop-up-title {
+	color: #686868;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: 2px solid #CDCCCC;
+}
+.tds-lib-pop-up-button {
+	float: right;
+	margin-left: 3px;
+	margin-top: 14px;
+	margin-botton: 14px;
+	
+}
+.clearFix {
+	visibility: hidden;
+	display: block;
+	content: "";
+	height: 0;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	End Pop-ups elements
+------------------------------------------------------------- */
+
+/*  -------------------------------------------------------------
+  Validations
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* This is our style for the invalid fields */
+input:invalid{
+  border-color: #6D2A2A;
+  background-color: #F3E4E4;
+}
+
+input:focus:invalid {
+  outline: none;
+	border-color: #6D2A2A;
+}
+
+/* This is the style of our error messages */
+.error {
+  width  : 100%;
+  padding: 0;
+ 
+  color: #FFFFFF;
+  /*background-color: #6D2A2A;*/
+ 
+	border-color: 6D2A2A;
+}
+.error.active {
+	border-color: #6D2A2A;
+  padding: 0.3em;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	End Validations
+------------------------------------------------------------- */
+
+/*-------------------------------------------------------------
+	Menu container
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.tds-lib_menu-container	{ display:inline-block; text-align: center; }
+.tds-lib_menu-container:hover { color: #CCCCCC; cursor: pointer; }
+.tds-lib_menu-container>label { display:block; cursor: pointer; }
+.tds-lib_menu-container:hover [class^="tds-lib-icon"], .tds-lib_menu-container:hover [class*=" tds-lib-icon"] { 
+	color: #CCCCCC !important; 
+	cursor: pointer !important; }
+ul.tds-lib_menu-container, ol.tds-lib_menu-container {
+	list-style-type: none;
+}
+ul.tds-lib_menu-container label, ol.tds-lib_menu-container label, ul.tds-lib_menu-container label { display:block; cursor: pointer; }
+
+.tds-lib_menu-container-active	{ 
+	display:inline-block; 
+	text-align: center; 
+	color: #1B5FA3 !important; 
+	cursor: pointer !important; 
+}
+.tds-lib_menu-container-active [class^="tds-lib-icon"], .tds-lib_menu-container-active [class*=" tds-lib-icon"] { 
+	color: #1B5FA3 !important; 
+	cursor: pointer !important; 
+}
+.tds-lib_menu-container-active>label { display:block; cursor: pointer; }
+ul.tds-lib_menu-container-active, ol.tds-lib_menu-container-active {
+	list-style-type: none;
+}
+ul.tds-lib_menu-container-active label, ol.tds-lib_menu-container-active label, ul.tds-lib_menu-container-active label { display:block; cursor: pointer; }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	End Menu container
+------------------------------------------------------------- */
+
+/*-------------------------------------------------------------
+	Tabs
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.tds-lib-accordion-header {
+	position:relative;
+	margin-top: 2.1em;
+	min-width: 260px;
+	font-size: 1rem;
+	cursor: pointer;
+
+	/* Evita selección de componentes en Firefox, Chrome y Safari. */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.tds-lib-accordion-header * { background-color: #FFFFFF; cursor: pointer; color: #004379  !important;}
+
+.active-header {
+	margin-bottom: 1em;
+	background-repeat: no-repeat;
+	background-position: right 50%;
+	color: #004379  !important;
+	font-weight: bold;
+}
+.inactive-header {
+	margin-bottom: 2.1em;
+	background-repeat: no-repeat;
+	background-position: right 50%;
+	color: #686868 !important;
+}
+.tds-lib-tab-inactive, .tds-lib-tab-active { 
+	position: absolute; 
+	top: 5px;
+	right: 0; 
+	background-color: #FFFFFF !important;
+}
+.accordion-content-close {
+	display: none;
+	margin-bottom: 4.2em;
+	width: auto;
+	min-width: 260px;
+	background: #ffffff;
+}
+.accordion-content-open {
+	display: block;
+}
+.td-tabs-line { margin-top: -5px; border-top: 2px #004379 solid; }
+.tds-lib-accordion-header >span {padding: 1px;}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	End Tabs
+------------------------------------------------------------- */
+
+
+/*-------------------------------------------------------------
+  Datepicker
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.ui-datepicker {
+  width: 16em !important;
+  margin-top: .1em !important;
+  padding: .2em .2em 0 !important;
+  display: none ;
+  padding-right: 1em !important;
+  border-width: 2px !important;
+}
+.ui-datepicker .ui-datepicker-title {
+  margin: 5px 2.3em 0 !important;
+  margin-left: 3em !important;
+  font-size: 16px !important;
+  font-family: Helvetica !important;
+  font-weight: normal !important;
+}
+.ui-datepicker table {
+  margin: 1em 0.5em !important;
+}
+.ui-datepicker th,.ui-datepicker td {
+  border: 1px solid #CDCCCC !important;
+  padding: 0px !important;
+}
+.ui-datepicker th span, .ui-datepicker td span, .ui-datepicker td a {
+  text-align: center !important;
+  font-size: 11px !important;
+  font-family: Helvetica !important;
+  font-weight: normal !important;
+}
+.ui-datepicker th{
+  background-color: #E6E7E8 !important;
+}
+.ui-datepicker .ui-datepicker-prev {
+  font-family: "tds-lib-icons";
+	margin-left: 0.5em ;
+}
+.ui-datepicker .ui-datepicker-next {
+  font-family: "tds-lib-icons";
+	margin-right: -0.5em ;
+}
+.ui-datepicker .ui-datepicker-prev .ui-icon, .ui-datepicker .ui-datepicker-next .ui-icon {
+  display: none;
+}
+.ui-datepicker .ui-datepicker-prev:hover , .ui-datepicker .ui-datepicker-next:hover {
+  background: inherit;
+  color: #666;
+  border: none;
+}
+.ui-datepicker .ui-datepicker-prev:before {
+  display: inline-block;
+  content: "\e603";
+  font-size: 18px;
+  margin-top: 10px;
+}
+.ui-datepicker .ui-datepicker-next:before {
+  display: inline-block;
+  content: "\e603";
+  font-size: 18px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-top: 10px;
+}
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ End Datepicker
+ -------------------------------------------------------------*/
+
+ /*-------------------------------------------------------------
+  jsTree
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.jstree-default .jstree-anchor > .jstree-themeicon ,.jstree-default > .jstree-no-dots .jstree-leaf > .jstree-oc{
+  display: none;
+ }
+.jstree a{
+  color: #808081 !important;
+  font-size: 16px !important;
+  font-family: Helvetica !important;
+  font-weight: normal !important;
+}
+.jstree li a:focus{
+  color: #FFFFFF !important;
+}
+.jstree-wholerow-hovered{
+  background:#1D69B2 !important;
+}
+.jstree-wholerow-clicked{
+  background:#0764AB !important;
+}
+.jstree-default .jstree-open > .jstree-ocl {
+  background: url("../images/iconos_TEC-Digital_svg/display.png") no-repeat scroll 0px center transparent !important;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px; 
+}
+.jstree-default .jstree-closed > .jstree-ocl {
+  background: url("../images/iconos_TEC-Digital_svg/display.png") no-repeat scroll 0px center transparent !important;  
+  -moz-transform: scale(1) rotate(-90deg);
+-webkit-transform: scale(1) rotate(-90deg);
+-o-transform: scale(1) rotate(-90deg);
+-ms-transform: scale(1) rotate(-90deg);
+transform: scale(1) rotate(-90deg);
+margin-left: 10px;
+
+}
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon {
+  background-image: none !important;
+}
+ /*-------------------------------------------------------------
+  End jsTree
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+table.dataTable tbody tr td:nth-of-type(3) {
+	width: 100px;
+}
+/* TABLE RESPONSIVE 01 */
+@media screen and (max-width: 768px) {
+  table.tds-lib-table-responsive-01 {
+    border: 0;
+  }
+  table.tds-lib-table-responsive-01 thead {
+    display: none;
+  }
+  table.tds-lib-table-responsive-01 tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+  table.tds-lib-table-responsive-01 td {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    border-bottom: 1px dotted #ccc;
+  }
+  table.tds-lib-table-responsive-01 td:last-child {
+    border-bottom: 0;
+  }
+  table.tds-lib-table-responsive-01 td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,381 @@
+<!--
+	tds-lib-spinner
+	@author Víctor Vargas Ramírez
+	@creation-date 20-11-2015
+	@description Web component for spinners in tds-lib
+-->
+<link rel="import" href="../../lib/polymer/polymer.html">
+<dom-module id="tds-lib-spinner">
+	<template>
+		<style>
+			/* INTERNAL STYLES FOR SPINNER */
+			:host {
+				display: block;
+			}
+			:host > div {
+				position: relative;
+			}
+			:host > div > input {
+				color: #808080;
+				background-color: #FFFFFF;
+				border: 1px solid #CDCCCC;
+				border-radius: 4px !important;
+				font-size: 15px;
+				font-family: Helvetica;
+				font-weight: normal;
+				padding: 6px 14px 6px 12px;
+			}
+			:host > div > input:focus {
+				border-color: #66AFE9;
+			}
+			:host > div > .input-group-btn-vertical {
+				position: absolute;
+				white-space: nowrap;
+				width: 10px;
+				vertical-align: middle;
+				display: table-cell;
+				top: 0;
+				right: 0;
+			}
+			:host > div > .input-group-btn-vertical > button {
+				background: transparent;
+				display: block;
+				float: none;
+				width: 100%;
+				max-width: 100%;
+				margin-left: -2px;
+				position: relative;
+				border: none;
+				left: -3px;
+				top: 2px;
+				z-index: 2;
+				height: 15px;
+				padding-top: 2px;
+				padding-bottom: 0px;
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+			:host > div >.input-group-btn-vertical > button:first-child > div {
+				width: 0; 
+				height: 0;
+				border-radius: 1px;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 8px solid #818181;
+				-moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-webkit-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-o-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-ms-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+			}
+			:host > div >.input-group-btn-vertical > button:first-child:hover > div {
+				border-top: 8px solid #CCCCCC;
+			}
+			:host > div >.input-group-btn-vertical > button:last-child {
+				margin-top: -2px;
+			}
+			:host > div >.input-group-btn-vertical > button:last-child  > div {
+				border-radius: 1px;
+				margin-top: -2px;
+				width: 0; 
+				height: 0; 
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 8px solid #818181;
+			}
+			:host > div >.input-group-btn-vertical > button:last-child:hover > div {
+				border-top: 8px solid #CCCCCC;
+			}
+			.tds-lib-spinner-pylmr {
+				position: relative;
+				display: block;
+				border-collapse: separate;
+			}
+			.tds-lib-spinner-pylmr-disabled {
+				display: none;
+			}
+			:host[disabled] .tds-lib-spinner-pylmr-disabled {
+				background: rgba(255,255,255,0.5);
+				height: 100%;
+				width: 100%;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+			}
+		</style>
+		<div class="tds-lib-spinner-pylmr">
+			<input type="text" class="form-control">
+			<div class="input-group-btn-vertical">
+				<button><div></div></button>
+				<button><div></div></button>
+			</div>
+			<div class="tds-lib-spinner-pylmr-disabled"></div>
+		</div>
+	</template>
+	<script>
+	  // tds-lib-spinner
+	  // ---------------
+	  // Register a new element called tds-lib-spinner
+	  Polymer({
+	    is: "tds-lib-spinner",
+	    // Default attributes for the element
+		properties: {
+			// Spinner Min Value
+			min: {
+				type: Number,
+				value: -999999999
+			},
+			// Spinner Max Value
+			max: {
+				type: Number,
+				value: 999999999
+			},
+			// Spinner Value
+			value: {
+				type: Number,
+				value: 0
+			},
+			// Spinner state
+			disabled: {
+				type: Boolean,
+				value: false
+			}
+		},
+		/**
+		 * This function will be executed when a tds-lib-spinner object is created and ready
+		 */
+		ready: function() {
+			// Local this.
+			var self = this;
+			// If user press and holds the down or up key then this will store a temporal function that increases or decreases the spinner value
+			this._timer;
+			// Timer checks this variables to determine if the user is still pressing the buttons
+			this._isHoldUp = 0;
+			this._isHoldDown = 0;
+			// If the initial value is smaller or bigger than the min or max values or its not a number then fix the initial value
+			if ( !this.value || isNaN(this.value) || this.value < this.min || this.value > this.max ) {
+				this.value = this.min;
+				this.children[0].children[0].value = this.value;
+			}
+			else{
+				this.value = parseInt(this.value);
+				this.children[0].children[0].value = this.value;
+			}
+			// Attach events
+			this.children[0].children[0].onkeydown = this.funcDelegate(this, "validateActionDown");
+			this.children[0].children[0].onchange = this.funcDelegate(this, "inputChanged")
+			this.children[0].children[0].onpaste = this.funcDelegate(this, "avoidPaste");
+			this.children[0].children[0].onkeyup = this.funcDelegate(this, "validateActionUp");
+			this.children[0].children[1].children[0].onmousedown = this.funcDelegate(this, "_upButtonMouseDown");
+			this.children[0].children[1].children[0].onmouseup = this.funcDelegate(this, "_upButtonMouseUp");
+			this.children[0].children[1].children[1].onmousedown = this.funcDelegate(this, "_downButtonMouseDown");
+			this.children[0].children[1].children[1].onmouseup = this.funcDelegate(this, "_downButtonMouseUp");
+			// If mouse pointer moves out of the up/down buttons, spinner increasing/decreasing have to stop.
+			document.body.addEventListener("mouseover",function(){
+				self._stopSpinner();
+			});
+		},
+		inputChanged: function() {
+			this.value = this.children[0].children[0].value;
+		},
+		/**
+		 * Fires when the element is created into the DOM Tree.
+		 */
+		attached: function() {
+			// In case element is not displayed then show it by removing the hide-till-loaded class
+			this.className = this.className.replace("hide-till-loaded", "");
+		},
+		/**
+		 * Fires when an attribute in the web component changes.
+		 * @param {string} name
+		 * @param {Object} type
+		 */
+		attributeChanged: function(attribute) {
+			// local this
+			var self = this;
+			switch (attribute) {
+				case "value":
+					// Check if the value is valid: N >= min && N <= Max
+					if (this.value < this.min || this.value > this.max) {
+						this.value = this.min;
+					} else {
+						this.children[0].children[0].value = this.value;
+					}
+					if (this.value >= 0 && this.value <= 9) {
+						this.children[0].children[0].value = "0" + this.value;
+					}
+					this.setAttribute("value", this.value);
+					this.fire('change', {value: self.value});
+					break;
+				case "min":
+					if (this.min > this.max) {
+						throw "The min param should be lower than the max param.";
+					}
+					// Check if actual spinner number is between the new range
+					if(this.value < this.min){
+						this.setAttribute("value", this.min);
+					}
+					break;
+				case "max":
+					if (this.min > this.max) {
+						throw "The max param should be greater than the min param.";
+					}
+					/*Check if actual spinner number is between the new range*/
+					if(this.value < this.min){
+						this.setAttribute("value", this.min);
+					}
+					break;
+			}
+		},
+		/**
+		 * Asociates an object with a custom event.
+		 * @param {Object} obj
+		 * @param {string} methodName
+		 * @param {Object} params
+		 * @returns {Function}
+		 */
+		funcDelegate: function(obj, methodName, params) {
+			params = params || {};
+			return function(e) {
+				e = e || window.event;
+				return obj[methodName](this, e, params);
+			};
+		},
+		/**
+		 * Prevent a paste from clipboard
+		 * @param {Object} Target Element
+		 * @param {Object} Clipboard element
+		 */
+		avoidPaste: function(el, ev) {
+			ev.preventDefault();
+		},
+		/**
+		 * Validate when a user fires a mouseup
+		 */
+		validateActionUp: function(obj,e){
+			if(this.children[0].children[0].value !=""){
+				if (this.children[0].children[0].value > this.max) {
+					this.setAttribute("value", this.max);
+				}
+				if (this.children[0].children[0].value < this.min) {
+					this.setAttribute("value", this.min);
+				}
+			}
+			else{
+				//Only asign the min value but it's not necessary to show in the input
+				this.setAttribute("value", this.min);
+			}
+		},
+		/**
+		 * Validate when a user fires a mousedown
+		 */
+		validateActionDown: function(obj,e){
+			if (!this.disabled) {
+				// Increase with arrow up
+				if(e.keyCode == 38){
+					if(this.value < this.max){
+						this.setAttribute("value", this.value + 1);
+					}
+					return;
+				}
+				// Decrease with arrow down
+				else if(e.keyCode == 40){
+					if(this.value > this.min){
+						this.setAttribute("value", this.value - 1);
+					}
+					return;
+				}
+	            // Allow: backspace, delete, tab, escape, enter and .
+	            else if ( [46,8,9,27,13].indexOf(e.keyCode)  !== -1 ||
+	                 // Allow: Ctrl+A
+	                (e.keyCode == 65 && e.ctrlKey === true) || 
+	                 // Allow: home, end, left, right
+	                (e.keyCode >= 35 && e.keyCode <= 39)) {
+	                     // let it happen, don't do anything
+	                     return;
+	            }
+	            else {
+	                // Ensure that it is a number and stop the keypress
+	                if (e.shiftKey || (e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105 )) {
+						e.preventDefault();
+					}
+	            }
+			} else {
+				e.preventDefault();
+			}
+
+		},
+		/**
+		 * _upButtonMouseDown
+		 */
+		_upButtonMouseDown: function() {
+			if (!this.disabled) {
+				this.increase();
+				var self = this;
+				self._isHoldUp = 1;
+				self._timer = setInterval(function() {
+			       if(self._isHoldUp){
+				       	self.increase();
+			       }
+			    }, 250);
+			}
+		},
+		/**
+		 * _upButtonMouseUp
+		 */
+		_upButtonMouseUp: function() {
+			this._isHoldUp = 0;
+			clearInterval(this._timer);
+		},
+		/**
+		 * _downButtonMouseDown
+		 */
+		_downButtonMouseDown: function() {
+			if (!this.disabled) {
+				this.decrease();
+				var self = this;
+				self._isHoldDown = 1;
+				self._timer = setInterval(function() {
+			       if(self._isHoldDown){
+				       	self.decrease();
+			       }
+			    }, 250);
+			}			
+		},
+		/**
+		 * _downButtonMouseUp
+		 */
+		_downButtonMouseUp: function() {
+			this._isHoldDown = 0;
+			clearInterval(this._timer);
+		},
+		/**
+		 * _stopSpinner
+		 */
+		_stopSpinner: function() {
+			this._isHoldUp = 0;
+			this._isHoldDown = 0;
+			clearInterval(this._timer);
+		},
+		/**
+		 * increase
+		 */
+		increase: function() {
+	       	if (parseInt(this.value) < this.max){
+				this.setAttribute("value", parseInt(this.value) + 1);
+			}
+		},
+		/**
+		 * decrease
+		 */
+		decrease: function() {
+			if (parseInt(this.value) > this.min) {
+				this.setAttribute("value", parseInt(this.value) - 1);
+			}
+		}
+	});
+	</script>
+</dom-module>
+

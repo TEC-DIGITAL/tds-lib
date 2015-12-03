@@ -1,0 +1,64 @@
+				<h1 class="page-header">Popups</h1>
+				<p>Open content in an interactive overlay.</p>
+				
+				<a id='opener' onclick='togglePopUp("id_ejemplo")'>Click here to see an example</a>
+				
+				<div id ="id_ejemplo" title="Helvetica Bold 16px (12pt)">
+					<h1>Esto es una prueba</h1>
+					<p>Soy un p y esto es una prueba</p>
+				</div>
+				<hr>
+				
+				<h2 class="page-subheader">Example:</h2>
+				<div>
+					<div class="tds-lib-pop-up-wrapper-example">
+						<h1 class="tds-lib-pop-up-title">Helvetica Bold 16px (12pt)</h1>
+						<p class="tds-lib_text_01">Helvetica 15px (11 pt)</p>
+						<p class="tds-lib_text_01">Leading 21px (15 pt)</p>
+						<button type="submit" class="tds-lib_form tds-lib-pop-up-button">Cancelar</button>
+						<button type="submit" class="tds-lib_form tds-lib-pop-up-button">Aceptar</button>
+						<div class="clearFix" style="clear:both;"></div>
+					</div>
+				</div>
+
+				<h2 class="page-subheader">HTML</h2>
+				<p>Use the following html structure for create a tds-lib-pop-up, and don't forget use <span style="color:#093">togglePopUp( id_pop-up )</span> function, sending by parameter the id of the element that you want to hide:</p>
+				<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;div id <span style="color:#00f">=</span><span style="color:#093">"id_ejemplo"</span> <span style="color:#33f;font-weight:700">title</span><span style="color:#00f">=</span><span style="color:#093">"Helvetica Bold 16px (12pt)"</span>>
+    &lt;p class<span style="color:#00f">=</span><span style="color:#093">"tds-lib_text_01"</span>>Helvetica 15px (<span style="color:#06f">11</span> pt)&lt;<span style="color:#00f">/</span>p>
+    &lt;p class<span style="color:#00f">=</span><span style="color:#093">"tds-lib_text_01"</span>>Leading 21px (<span style="color:#06f">15</span> pt)&lt;<span style="color:#00f">/</span>p>
+&lt;<span style="color:#00f">/</span>div>
+</pre>
+
+				<h2 class="page-subheader">Javascript</h2>
+				
+
+				<p>Use the following code to create an instance of tds-lib-pop-up</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#00f">new</span>  <span style="">tds_lib.PopUp</span>( <span style="color:#33f;font-weight:700">document</span>.<span style="color:#33f;font-weight:700">getElementById</span>(<span style="color:#093">"id_ejemplo"</span>),{ accept: varAccept, cancel: varCancel } );
+</pre>
+
+<p>The arguments for tds_lib.PopUp constructor are, the object and a configuration object with the following sentence: { accept: functionAccept, cancel: functionCancel }</p>
+<p>functionCancel and functionAccept are closures, for example:</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="font-weight:700">var</span> <span style="color:#ff8000">varAccept</span> <span style="color:#00f">=</span> <span style="font-weight:700">function</span> () {
+    <span style="color:#33f;font-weight:700">alert</span>(<span style="color:#093">"soy el botón aceptar y esto es una pruba."</span>);
+    <span style="color:#00f">return</span> <span style="color:#9700cc">true</span>;
+};
+
+<span style="font-weight:700">var</span> <span style="color:#ff8000">varCancel</span> <span style="color:#00f">=</span> <span style="font-weight:700">function</span> () {
+    <span style="color:#33f;font-weight:700">alert</span>(<span style="color:#093">"soy el botón cancelar y esto es una prueba."</span>);
+    <span style="color:#00f">return</span> <span style="color:#9700cc">false</span>;
+};
+</pre>
+
+<p>If you want that the action of the botton close the pop up, the closure must return true, if the closure return false, the pop up will continue opened.<p>
+<script>
+	var accept = function () {
+		alert("soy el botón aceptar y esto es una pruba, mi función retorna true por lo tanto el pop up se debe cerrar.");
+		return true;
+	};
+	var cancel = function () {
+		alert("soy el botón cancelar y esto es una prueba, mi función retorna false por lo tanto el pop up no debe cerrarse.");
+		return false;
+	};
+
+	new  tds_lib.PopUp( document.getElementById("id_ejemplo"),{ accept: accept, cancel: cancel } );
+</script>

@@ -1,0 +1,245 @@
+<div>
+	<header class='page-header section-title'>
+		<h1>Spinner</h1>
+		<div class="information">
+			<span>v2.0</span>
+			<span class="stable">Stable</span>
+		</div>
+	</header>
+	<section class="description">
+		<button data-toggle="collapse" data-target="#tabDetails" aria-expanded="false" aria-controls="tabDetails" class="more-info pull-right btn btn-default">More Info</button>
+		<div class="collapse" id="tabDetails">
+			<div class="well">
+				<ul class="list-unstyled">
+					<li><b>Last Update:</b>20/11/2015</li>
+					<li><b>Creation Date:</b>20/11/2015</li>
+					<li><b>Whats New?</b>
+						<ul>
+							<li>Created new events and attribute controllers.</li>
+							<li>The spinner is now a web component!</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<p>The tds-lib-spinner allows you to create input elements specialized for numbers.</p>
+		<b>How to use it?</b>
+		<p>First you have to add the webcomponent library</p>
+		<pre>
+			<code class="html xml">
+	&lt;script src="/resources/tds-lib/lib/webcomponentsjs/webcomponents-lite.min.js"&gt;&lt;/script&gt;
+			</code></pre>
+		<p>Then include the tab web component in your project. You can add this line in any part of your HTML or ADP file.</p>
+		<pre>
+			<code class="html xml">
+	&lt;link rel="import" href="/resources/tds-lib/web_components/tds-lib-spinner/tds-lib-spinner.html"&gt;
+			</code></pre>
+		<p>That's all! Now you can use the <code>tds-lib-spinner</code> element.</p>
+		<b>Code</b>
+		<pre>
+			<code class="html xml">
+	<tds-lib-spinner value="10" min="-3" max="200">
+			</code></pre>
+		<b>Result</b>
+		<tds-lib-spinner value="10" min="-3" max="200">
+	</section>
+</div>
+<b>Add a spinner using JavaScript</b>
+	<p>To add a spinner using JavScript you can use the traditional method</p>
+	<pre>
+		<code class="js">
+// Create spinner with JavaScript
+var node = document.createElement("tds-lib-spinner");
+// Set initial attributes
+node.setAttribute("value",40);
+node.setAttribute("min",40);
+node.setAttribute("max",80);
+document.body.appendChild(node);
+		</code></pre>
+	<b>Attributes</b>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Attribute</th>
+				<th>Description</th>
+				<th>Example</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>value</td>
+				<td>Number, Integer</td>
+				<td>Value of the spinner. To change the spinner's value, change this attribute.</td>
+				<td>
+					<pre><code class="html xml">
+<tds-lib-spinner value="10">
+					</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>min</td>
+				<td>Number</td>
+				<td>This is the minimal value the spinner can get.</td>
+				<td>
+					<pre><code class="html xml">
+<tds-lib-spinner value="10" min="0">
+					</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>max</td>
+				<td>Number</td>
+				<td>This is the max value the spinner can get.</td>
+				<td>
+					<pre><code class="html xml">
+<tds-lib-spinner value="10" max="100">
+					</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>disabled</td>
+				<td></td>
+				<td>If this attribute exists then the spinner will be disabled.</td>
+				<td>
+					<pre><code class="html xml">
+<tds-lib-spinner disabled>
+					</code></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<b>Events</b>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Params</th>
+				<th>Description</th>
+				<th>Example</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>increase()</td>
+				<td></td>
+				<td>Increases the value of the spinner by 1 (If is posible).</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#mySpinner").increase();
+					</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>decrease()</td>
+				<td></td>
+				<td>Decreases the value of the spinner by 1 (If is posible).</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#mySpinner").decrease();
+					</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>change()</td>
+				<td></td>
+				<td>This event triggers when the spinner changes.</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#mySpinner").addEventListener("change",function(){
+// TODO
+});
+					</code></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<b>Examples</b>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Example</th>
+				<th>Code</th>
+				<th>Result</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Set Value</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#example01").setAttribute("value", 10);
+					</code></pre>
+					<button class='btn btn-primary' onclick="document.querySelector('#example01').setAttribute('value', 10);">Execute</button>
+				</td>
+				<td>
+					<tds-lib-spinner id="example01" value="3">
+				</td>
+			</tr>
+			<tr>
+				<td>Increase / Decrease</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#example02").increase();
+document.querySelector("#example02").decrease();
+					</code></pre>
+					<button class='btn btn-primary' onclick="document.querySelector('#example02').increase();">Increase</button>
+					<button class='btn btn-primary' onclick="document.querySelector('#example02').decrease();">Decrease</button>
+				</td>
+				<td>
+					<tds-lib-spinner id="example02" value="05">
+				</td>
+			</tr>
+			<tr>
+				<td>Enable / Disable the spinner</td>
+				<td>
+					<pre><code class="js">
+document.querySelector("#example03").removeAttribute("disabled");
+document.querySelector("#example03").setAttribute("disabled", "");
+					</code></pre>
+					<button class='btn btn-primary' onclick="document.querySelector('#example03').removeAttribute('disabled');">Enable</button>
+					<button class='btn btn-primary' onclick="document.querySelector('#example03').setAttribute('disabled', '');">Disable</button>
+				</td>
+				<td>
+					<tds-lib-spinner id="example03" value="100">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<h1 class="page-header">Spinner</h1>
+<p>Use 'tds-lib_form_spinner' class for select widget style.</p>
+
+<div class="input-group tds-lib_form_spinner">
+	<input type="text" class="form-control" value="10">
+	<div class="input-group-btn-vertical">
+		<button class="tds-lib-icon-display"></button>
+		<button class="tds-lib-icon-display"></button>
+	</div>
+</div>
+
+<h2 class="page-subheader">HTML</h2>
+	<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;div class<span style="color:#00f">=</span><span style="color:#093">"input-group tds-lib_form_spinner"</span>>
+    &lt;<span style="color:#33f;font-weight:700">input</span> <span style="color:#33f;font-weight:700">type</span><span style="color:#00f">=</span><span style="color:#093">"text"</span> class<span style="color:#00f">=</span><span style="color:#093">"form-control"</span> <span style="color:#33f;font-weight:700">value</span><span style="color:#00f">=</span><span style="color:#093">"10"</span>>
+    &lt;div class<span style="color:#00f">=</span><span style="color:#093">"input-group-btn-vertical"</span>>
+        &lt;button class<span style="color:#00f">=</span><span style="color:#093">"tds-lib-icon-display"</span>>&lt;<span style="color:#00f">/</span>button>
+        &lt;button class<span style="color:#00f">=</span><span style="color:#093">"tds-lib-icon-display"</span>>&lt;<span style="color:#00f">/</span>button>
+    &lt;<span style="color:#00f">/</span>div>
+&lt;<span style="color:#00f">/</span>div>
+</pre>
+
+<h2 class="page-subheader">JavasScript</h2>
+
+<p>Get the div element with class 'tds-lib_form_spinner' from the DOM</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#00f">var</span> mySpinner1 <span style="color:#00f">=</span> <span style="color:#00f">new</span> tds_lib.Spinner(document.getElementsByClassName(<span style="color:#093">"tds-lib_form_spinner"</span>)[<span style="color:#06f">0</span>]);</pre>
+<h3>Methods</h3>
+
+<p>Set the highest value</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">mySpinner1.setMaxValue(1000)<span style="color:#00f">;</span></pre>
+
+<p>Set the lowest value</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">mySpinner1.setMinValue(-50)<span style="color:#00f">;</span></pre>
+<p>Set the current value</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">mySpinner1.setSpinnerValue(7)<span style="color:#00f">;</span></pre>
+<p>Get the current value</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">mySpinner1.getSpinnerValue()<span style="color:#00f">;</span></pre>

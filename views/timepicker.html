@@ -1,0 +1,16 @@
+<p>This is the timepicker view.</p>
+<button ng-click="hacerOtraCosa()" class="btn btn-primary">Botón</button>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="evento in eventos | orderBy: 'id'">
+			<td>{{ evento.id }}</td>
+			<td>{{ evento.nombre }}</td>
+		</tr>
+	</tbody>
+</table>

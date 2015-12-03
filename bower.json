@@ -1,0 +1,19 @@
+{
+  "name": "tds-lib",
+  "version": "2.0.0",
+  "authors": [
+    "Víctor Vargas Ramírez <vargasvr94@gmail.com>"
+  ],
+  "description": "TEC Digital standard library",
+  "main": "index.html",
+  "keywords": [
+    "tds-lib",
+    "tec-digital",
+    "tec",
+    "digital",
+    "standard",
+    "library"
+  ],
+  "license": "MIT",
+  "homepage": "http://tecdigital.tec.ac.cr/tds-lib/#/"
+}

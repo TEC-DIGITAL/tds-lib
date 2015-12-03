@@ -1,0 +1,212 @@
+<!--
+	tds-lib-tab
+	@author Víctor Vargas Ramírez
+	@creation-date 18-11-2015
+	@description Web component for tabs in tds-lib
+-->
+<link rel="import" href="../../lib/polymer/polymer.html">
+<dom-module id="tds-lib-tab">
+	<template>
+		<style>
+			/* INTERNAL STYLES FOR TAB */
+			:host {
+				display: block;
+				margin-bottom: 10px;
+			}
+			:host .tds-lib-tab-plymr-header {
+				cursor: pointer;
+				display: flex;
+				border-bottom: 2px solid #1B5FA3;
+				align-items: center;
+				justify-content: space-between;
+			}
+			:host .tds-lib-tab-plymr-header > div {
+				background: #FFF;
+				margin-bottom: -10px;
+				height: 10px;
+				width: 10px;
+				padding-left: 5px;
+			}
+			:host .tds-lib-tab-plymr-header > div > i {
+				display: block;
+			}
+			:host .tds-lib-tab-plymr-header > div > i::before {
+				position: relative;
+				top: 0;
+				content: "";
+				display: block;
+				width: 8px;
+				height: 8px;
+				border-right: 2px solid #004379;
+				border-top: 2px solid #004379;
+				transform: rotate(135deg);
+				margin-top: -3px;
+			}
+			:host[open=true] .tds-lib-tab-plymr-header > div > i::before {
+				transform: rotate(-45deg);
+			}
+			:host[disabled] .tds-lib-tab-plymr-header > div > i::before {
+				transform: rotate(135deg);
+			}
+			:host .tds-lib-tab-plymr-header > h1 {
+				margin: 0;
+				font-weight: bold;
+				font-family: Helvetica,Helvetica,sans-serif;
+				font-size: 16px;
+				background: #FFF;
+				margin-bottom: -10px;
+				padding: 0 8px 0px 0px;
+				color: #808081;
+			}
+			:host[open=true] .tds-lib-tab-plymr-header > h1 {
+				color: #004379;
+			}
+			:host .tds-lib-tab-plymr-tabbody {
+				padding: 10px 0;
+			}
+			:host[open="false"] .tds-lib-tab-plymr-tabbody {
+				display: none;
+			}
+			:host[disabled] .tds-lib-tab-plymr-tabbody {
+				display: none;
+			}
+			:host[disabled] .tds-lib-tab-plymr-header > h1 {
+				color: #CCC;
+			}
+			:host[disabled] .tds-lib-tab-plymr-header {
+				border-bottom: 2px solid #CCC;
+				cursor: default;
+			}
+			:host[disabled] .tds-lib-tab-plymr-header > div > i::before {
+				border-right: 2px solid #CCC;
+				border-top: 2px solid #CCC;
+			}
+		</style>
+		<div class="tds-lib-tab-plymr">
+			<header class="tds-lib-tab-plymr-header">
+				<h1 class="tds-lib_title_02">{{ tabname }}</h1>
+				<div>
+					<i></i>
+					<i></i>
+				</div>
+			</header>
+			<section class="tds-lib-tab-plymr-tabbody">
+				<content></content>
+			</section>
+		</div>
+	</template>
+	<script>
+	  // tds-lib-tab
+	  // ---------------
+	  // Register a new element called tds-lib-tab
+	  Polymer({
+	    is: "tds-lib-tab",
+	    // Default attributes for the element
+		properties: {
+			// Tab title
+			tabname: {
+				type: String,
+				value: "No tabname attribute provided"
+			},
+			// Tab is open?
+			open: {
+				type: Boolean,
+				value: true
+			},
+			// Tab is disabled?
+			disabled: {
+				type: Boolean,
+				value: false
+			}
+		},
+		// This function will be executed when a tds-lib-tab object is created and ready
+		ready: function() {
+			// Local `this`
+			var _self = this;
+			// Add click event to tab header (Open / Close)
+			this.querySelector(".tds-lib-tab-plymr-header").addEventListener("click",function(){
+				// If tab is disabled then do nothing
+				if (!_self.disabled) {
+					// If the tab is open then close it
+					if (_self.getAttribute("open") === "true") {
+						_self.setAttribute("open", "false");
+						_self.fire('change', {open: false});
+					} else {
+						// If the tab is closed then open it
+						_self.setAttribute("open", "true");
+						_self.fire('change', {open: true});
+					}
+				}
+			});
+		},
+		/**
+		 * Fires when an attribute in the web component changes.
+		 * @param {string} name
+		 * @param {Object} type
+		 */
+		attributeChanged: function() {
+			switch (attribute) {
+				case "tabname":
+					this.querySelector(".tds-lib-tab-plymr-header h1").textContent(this.getAttribute("tabname"));
+					break;
+			}
+		},
+		// This event fires when the object is inserted into the DOM Tree
+		// Verifies if the element should show or hide the tab content
+		attached: function(){
+			if (this.getAttribute("open") === "true") {
+				this.setAttribute("open", "false");
+			} else {
+				this.setAttribute("open", "true");
+			}
+			// In case element is not displayed then show it by removing the hide-till-loaded class
+			this.className = this.className.replace("hide-till-loaded", "");
+		},
+		// Overwrite the appendChild event
+		// This will add an object into the tab content instead the tab root
+		appendChild: function(object) {
+			// If the object is invalid the throw an error
+			try {
+				this.querySelector(".tds-lib-tab-plymr-tabbody").appendChild(object);
+			} catch(ex) {
+				throw "Error while appending content. The content must be an html string or an HTML object structure."
+			}
+		},
+		// Change the hole content of the tab
+		setContent: function(objectOrString) {
+			// If the object is invalid the throw an error
+			try {
+				if (typeof objectOrString === "string") {
+					this.querySelector(".tds-lib-tab-plymr-tabbody").innerHTML = objectOrString;
+				} else {
+					this.querySelector(".tds-lib-tab-plymr-tabbody").innerHTML = "";
+					this.querySelector(".tds-lib-tab-plymr-tabbody").appendChild(objectOrString);
+				}
+			} catch(ex) {
+				throw "Error while setting content. The content must be an html string or an HTML object structure."
+			}
+		},
+		// This function will close a tab
+		closeTab: function() {
+			// If tab is disabled or close then do nothing
+			if (!this.disabled && this.getAttribute("open") === "true") {
+				this.setAttribute("open", "false");
+				this.fire('change', {open: false});
+			}
+		},
+		// This function will open a tab
+		openTab: function() {
+			// If tab is disabled or open then do nothing
+			if (!this.disabled && this.getAttribute("open") === "false") {
+				this.setAttribute("open", "true");
+				this.fire('change', {open: true});
+			}
+		},
+		// This function will disable or enable the tab
+		toggleState: function() {
+			(this.disabled) ? this.removeAttribute("disabled") : this.setAttribute("disabled");
+		}
+	  });
+	</script>
+</dom-module>
+

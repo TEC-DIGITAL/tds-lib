@@ -1,0 +1,233 @@
+#logo {
+  display: inline-block;
+  max-width: 100%;
+  width: 250px;
+}
+#logo_tec {
+  display: inline-block;
+  margin: 0.5em 0;
+  max-height: 50px;
+}
+#mainmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#mainmenu li {
+  border-left: 1px solid #E6E6E6;
+  border-right: 1px solid #E6E6E6;
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 65px;
+  text-align: center;
+  width: 68px;
+}
+#mainmenu li i {
+  color: #023F70;
+  display: block;
+  font-size: 3em;
+}
+#mainmenu li:first-of-type {
+  border-top: 1px solid #E6E6E6;
+}
+#mainmenu li:last-of-type {
+  border-bottom: 1px solid #E6E6E6;
+}
+#mainmenu li:first-of-type i {
+  font-size: 1.5em;
+}
+#mainmenu li:hover {
+  background: #E6E6E6;
+}
+#mainmenu li.active {
+  background: #1D69B2;
+  border-right: 8px solid #023F70;
+}
+#mainmenu li.active i {
+  color: #FFF;
+}
+.header-banner {
+  background: #E6E6E6;
+  color: #666;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.8em 1.5em;
+}
+.page-header {
+  font-size: 1em;
+  font-weight: bold;
+}
+.page-subheader {
+  color: #CCC;
+  font-size: 1em;
+  font-weight: bold;
+}
+table h1 {
+  font-size: 1em;
+}
+.table_container {
+  overflow-x: auto;
+}
+.hide-till-loaded {
+  display: none;
+}
+header.page-header {
+  cursor: pointer;
+  display: flex;
+  border: 1px solid #F2F2F2;
+  height: 63px;
+  justify-content: space-between;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,bfbfbf+100&amp;0+0,0.65+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(191,191,191,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(191,191,191,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(191,191,191,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6bfbfbf',GradientType=0 ); /* IE6-9 */
+}
+header.page-header:hover {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,bfbfbf+100&amp;0+0,0.65+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(100,100,100,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(100,100,100,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(100,100,100,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6bfbfbf',GradientType=0 ); /* IE6-9 */
+}
+div > header.page-header h1::after {
+  content: "Click here to open / close this section";
+  border-left: 1px solid #CCC;
+  font-size: 14px;
+  padding-left: 20px;
+  margin-left: 20px;
+  font-weight: normal;
+}
+header.page-header h1 {
+  margin: 8px 0 0;
+  padding: 5px 20px;
+  font-weight: normal;
+  font-size: 36px;
+}
+header.page-header div.information {
+  display: flex;
+  margin: 0 20px;
+  height: 60px;
+  align-items: center;
+}
+header.page-header div.information span {
+  align-items: center;
+  background: #666;
+  color: #FFF;
+  border: 1px solid #CCC;
+  display: inline-block;
+  font-weight: bold;
+  justify-content: center;
+  margin: 0;
+  height: 32px;
+  padding: 5px 10px;
+}
+header.page-header div.information span:first-of-type {
+  border-radius: 8px 0 0 8px;
+}
+header.page-header div.information span:last-of-type {
+  border-radius: 0 8px 8px 0;
+}
+header.page-header div.information span.stable {
+  background: #4CC71E;
+}
+header.page-header div.information span.deprecated {
+  background: #F7D025;
+}
+section.description {
+  padding: 5px;
+}
+pre {
+  background-color: transparent;
+  border: none;
+}
+pre code {
+  margin-top: -20px;
+  white-space: pre;
+}
+.hidden-section .description {
+  display: none;
+}
+#tempCont {
+  display: none;
+}
+.more-info   {
+  font-size: 1.5em;
+}
+[role="tooltip"] {
+  color: #666;
+}
+
+/* MAIN */
+#intro-tds-lib {
+  background: #10467A;
+  color: #FFF;
+  min-height: 200px;
+  padding: 10px 20px;
+  text-align: center;
+}
+#intro-tds-lib h1 {
+  font-size: 1.85em;
+  margin: 0 auto;
+  max-width: 710px;
+  font-weight: 400;
+  color: #FFF;
+}
+#intro-tds-lib h2 {
+  color: #CCC;
+}
+.version {
+  color: #CCC;
+}
+paper-tabs, paper-toolbar {
+  background-color: #10467A;
+  color: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+paper-toolbar paper-tabs {
+  box-shadow: none;
+}
+paper-tabs[noink][no-bar] paper-tab.iron-selected {
+  color: #ffff8d;
+}
+paper-tabs[align-bottom] {
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.15);
+}
+.paper-tabs-0 #selectionBar.paper-tabs {
+  background: #FFF;
+  height: 3px;
+}
+.default-text {
+  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+.main-container {
+  padding: 0.5em 0;
+}
+.feature-detail {
+  color: #333;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 300;
+}
+.feature {
+  text-align: center;
+}
+.feature img {
+  width: 150px;
+}
+.feature img.components {
+  margin-top: 19px;
+  width: 100%;
+}
+.feature h2 {
+  color: #333;
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+}

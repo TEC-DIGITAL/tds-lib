@@ -1,0 +1,231 @@
+<div>
+	<header class='page-header section-title'>
+		<h1>Tabs</h1>
+		<div class="information">
+			<span>v2.0</span>
+			<span class="stable">Stable</span>
+		</div>
+	</header>
+	<section class="description">
+		<button data-toggle="collapse" data-target="#tabDetails" aria-expanded="false" aria-controls="tabDetails" class="more-info pull-right btn btn-default">More Info</button>
+		<div class="collapse" id="tabDetails">
+			<div class="well">
+				<ul class="list-unstyled">
+					<li><b>Last Update:</b>19/11/2015</li>
+					<li><b>Creation Date:</b>19/11/2015</li>
+					<li><b>Whats New?</b>
+						<ul>
+							<li>Created new events and attribute controllers.</li>
+							<li>The collapse is now a web component!</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<p>The tds-lib-tabs allows you to group data inside a tab.</p>
+		<b>How to use it?</b>
+		<p>First you have to add the webcomponent library</p>
+		<pre>
+			<code class="html xml">
+	&lt;script src="/resources/tds-lib/lib/webcomponentsjs/webcomponents-lite.min.js"&gt;&lt;/script&gt;
+			</code></pre>
+		<p>Then include the tab web component in your project. You can add this line in any part of your HTML or ADP file.</p>
+		<pre>
+			<code class="html xml">
+	&lt;link rel="import" href="/resources/tds-lib/web_components/tds-lib-tab/tds-lib-tab.html"&gt;
+			</code></pre>
+		<p>That's all! Now you can use the <code>tds-lib-tab</code> element.</p>
+		<b>Code</b>
+		<pre>
+			<code class="html xml">
+	<tds-lib-tab tabname="Tab title" class="hide-till-loaded">
+	  <p>This is the tab content</p>
+	</tds-lib-tab>
+			</code></pre>
+		<b>Result</b>
+		<tds-lib-tab tabname="Tab title" class="hide-till-loaded">
+			<p>This is the tab content</p>
+		</tds-lib-tab>
+		<p>The <code class="css">.hide-till-loaded</code> class will be deleted when the element is ready. So you can add any css property you need, like a placeholder or hide the element.</p>
+		<b>Add a tab using JavaScript</b>
+		<p>To add a tab using JavScript you can use the traditional method</p>
+		<pre>
+			<code class="js">
+	// Create tab with JavaScript
+	var node = document.createElement("tds-lib-tab");
+	node.setAttribute("tabname","Added with JS");
+	document.body.appendChild(node);
+	// Show only if the element is ready
+	node.className = "hide-till-loaded";
+	// Add content to tab with JavaScript
+	var textnode = document.createTextNode("Tab content");
+	node.appendChild(textnode);
+			</code></pre>
+		<b>Attributes</b>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Attribute</th>
+					<th>Description</th>
+					<th>Example</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>tabname</td>
+					<td>text</td>
+					<td>Tab's title.</td>
+					<td>
+						<pre><code class="html xml">
+<tds-lib-tab id="myTab" tabname="This is the title">
+	Add another tab
+</tds-lib-tab>
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>open</td>
+					<td>boolean</td>
+					<td>This attribute shows or hides the tab content</td>
+					<td>
+						<pre><code class="html xml">
+<tds-lib-tab id="myTab" tabname="This is the title" open="true">
+	Add another tab
+</tds-lib-tab>
+						</code></pre>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<b>Events</b>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Params</th>
+					<th>Description</th>
+					<th>Example</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>set(objectOrText)</td>
+					<td>objectOrText: Can be an HTML string or an object.</td>
+					<td>Changes the content of the tab with the objectOrText content.</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").setContent("<p>Hello World!</p>");
+document.querySelector("#mitab").setContent(document.querySelector("#content"));
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>appendChild(objectOrText)</td>
+					<td>objectOrText: Can be an HTML string or an object.</td>
+					<td>Adds an element at the end of the tab content</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").appendChild("<p>Hello World!</p>");
+document.querySelector("#mitab").appendChild(document.querySelector("#content"));
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>toggleState()</td>
+					<td></td>
+					<td>Enable / Disable tab</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").toggleState();
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>openTab()</td>
+					<td></td>
+					<td>Open a specific tab</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").openTab();
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>closeTab()</td>
+					<td></td>
+					<td>Close a specific tab</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").closeTab();
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>change()</td>
+					<td></td>
+					<td>Fires when a tab changes its state</td>
+					<td>
+						<pre><code class="js">
+document.querySelector("#myTab").addEventListener("change", function(data){
+	// The change info will be in data.details
+	// Ex
+	console.log(data.detail.open);
+});
+						</code></pre>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Some Examples</h2>
+		<hr>
+		<button class="btn btn-default" id="add" data-toggle="tooltip" data-placement="top" title="Create a new tab">ADD</button>
+		<button class="btn btn-default" id="set" data-toggle="tooltip" data-placement="top" title="Set the first tab content to '<p>Hello World!'">SET</button>
+		<button class="btn btn-default" id="setO" data-toggle="tooltip" data-placement="top" title="Set the first tab content to one object content">SET OBJECT</button>
+		<button class="btn btn-default" id="dis" data-toggle="tooltip" data-placement="top" title="Enable / Disable state">TOGGLE STATE</button>
+		<button class="btn btn-default" id="open" data-toggle="tooltip" data-placement="top" title="Open the first tab">OPEN</button>
+		<button class="btn btn-default" id="close" data-toggle="tooltip" data-placement="top" title="Close the first tab">CLOSE</button>
+		See the first tab to checkout the events.
+		<hr>
+		<div id="contenido">
+			<tds-lib-tab id="myTab" tabname="Tareas Realizadas" open="false" class="wait-till-loaded">
+				Add another tab
+			</tds-lib-tab>
+		</div>
+		<div id="tempCont">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus similique, eum distinctio aliquid quisquam esse facilis quod mollitia nesciunt, quidem ad laborum tempore dolore odio harum molestias aut voluptates quibusdam.</p>
+			<p>Enim facere velit ullam non! Nostrum cumque blanditiis distinctio non consequuntur fugit consectetur delectus quam voluptate officia temporibus minima, adipisci, tempore placeat eaque. Quas nihil aliquid aperiam odit dolorem quaerat.</p>
+			<p>Laudantium eius ut id eos numquam omnis facere minus nobis impedit modi quas deserunt in cum saepe vel iusto molestiae, accusamus consequatur, mollitia debitis. Quia laudantium porro in molestiae officiis!</p>
+		</div>
+	</section>
+</div>
+</div>
+<div class="hidden-section">
+	<header class='page-header section-title'>
+		<h1>Old Tabs</h1>
+		<div class="information">
+			<span>v1.0</span>
+			<span class="deprecated">Deprecated</span>
+		</div>
+	</header>
+	<section class="description">
+		<button data-toggle="collapse" data-target="#oldTabDetails" aria-expanded="false" aria-controls="oldTabDetails" class="more-info pull-right btn btn-default">More Info</button>
+		<div class="collapse" id="oldTabDetails">
+			<div class="well">
+				<ul class="list-unstyled">
+					<li><b>Last Update:</b>19/06/2015</li>
+					<li><b>Creation Date:</b>28/01/2015</li>
+				</ul>
+			</div>
+		</div>
+		<p>Use the following html structure for create a tds-lib-tab:</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;div id<span style="color:#00f">=</span><span style="color:#093">"example"</span>>&lt;span class<span style="color:#00f">=</span><span style="color:#093">"clase tds-lib_title_02"</span>>Header <span style="color:#33f;font-weight:700">title</span>&lt;<span style="color:#00f">/</span>span>&lt;<span style="color:#00f">/</span>div>
+&lt;div>
+    &lt;p>The <span style="color:#33f;font-weight:700">content</span> here<span style="color:#00f">!</span>&lt;<span style="color:#00f">/</span>p>
+&lt;<span style="color:#00f">/</span>div></pre>
+		<p>And run the following javascript code; the id is the id of the div that you whant as header, in this example the id is example1</p>
+		<p>The second parameter is a configuration object with the attribute openAttr you need to use it if you want the tap close or open (true for opened and false for closed)</p>
+		<pre style="background:rgba(238,238,238,0.92);color:#000">new  tds_lib<span style="color:#36c;font-style:italic">.Tab</span>( document<span style="color:#36c;font-style:italic">.getElementById</span>("example"),{ openAttr: true } );</pre>
+		<iframe width="100%" height="300" src="//jsfiddle.net/victorvargasramirez/97tk9rqg/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	</section>
+</div>

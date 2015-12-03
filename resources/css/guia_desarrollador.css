@@ -1,0 +1,70 @@
+#contenedorPrincipal{
+	border-top: 2px solid #E3E4E5;
+	width: 100%;
+	min-height: 200px;
+	height: 100%;
+}
+#contenedorPrincipal>div{
+	display: inline-block;
+	left:50%;
+}
+#sidebar{
+	width: 18.4%;
+	min-height: 200px; 
+	height: 100%;
+	background:white;
+	text-align: left;
+	border-right: 2px solid #E3E4E5;
+}
+#divMenu a{
+	width:89%;
+	height:30px;
+	color: #808081;
+	font-family: helvetica;
+}
+#contenido{
+	width: 81%;
+	min-height: 200px; 
+	height: 100%;
+	float: right;
+}
+/**************Menu de opciones de cada rama*************/
+#navMenuDiv{ border-bottom: 2px solid #E3E4E5; }
+.navMenu{
+  height:30px;
+  width: 100%;
+  padding-right: 2.1%;
+}
+.navMenu ul li {
+  display: block;
+  position: relative;
+  float: right;
+  display: inline;
+}
+.navMenu ul li a {
+  display: block;
+  padding: 5px;
+  /*background: #909090;*/
+  color: #909090; 
+  text-align:center;
+  width: auto;
+   min-width: 20px; /*Con esto se logra el espacio a la derecha entre los iconos de edicion y el margen derecho*/
+}
+/**************FIN CSS Menu de opciones de cada rama*******/
+.page-header {
+    margin: 5px 0 20px;
+}
+@media (max-width: 800px) {
+    #sidebar {
+        width: 100%;
+    }
+    .responsive_table {
+        overflow: auto;
+    }
+    #contenido {
+        width: 100%;
+    }
+} 
+#divMenu a.jstree-clicked, #divMenu a.jstree-clicked a, #divMenu a.jstree-clicked span {
+    color: #FFF;
+}

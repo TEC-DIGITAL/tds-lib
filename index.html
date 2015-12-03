@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>tds-lib docs</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/tds-lib.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/tds-fonts.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="resources/lib/Datatables/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="resources/lib/jquery-ui/jquery-ui-1.11.1/jquery-ui.min-1.11.1.css">
+  <link rel="stylesheet" type="text/css" href="resources/lib/highlight/styles/monokai_sublime.css">
+</head>
+<body>
+  <div ng-app="guidedToursApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-controller="HomeCtrl">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="header-banner">{{ _l.global_dev_guide }}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-1">
+          <ul class="hidden-xs hidden-sm" id="mainmenu">
+            <li ng-repeat="menuItem in menuList" ng-click="updateView(menuItem.url)" title="{{ menuItem.title }}" ng-class="{ 'active': isActive(menuItem.url)}">
+              <i class="{{ menuItem.icon }}"></i>
+            </li>
+          </ul>
+          <select class="form-control hidden-md hidden-lg" ng-options="menuItem.url as menuItem.title for menuItem in menuList" ng-model="actualView" ng-change="updateView()"></select>
+        </div>
+        <div class="col-sm-12 col-md-11">
+          <div ng-view=""></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="resources/js/tds-lib.js"></script>
+    <script src="resources/lib/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="resources/lib/highlight/highlight.pack.js"></script>
+    <link rel="import" href="resources/web_components/tds-lib-tab/tds-lib-tab.html">
+    <link rel="import" href="resources/web_components/tds-lib-spinner/tds-lib-spinner.html">
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/translationservice.js"></script>
+    <script src="scripts/services/menu.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/buttons.js"></script>
+    <script src="scripts/controllers/commonlibs.js"></script>
+    <script src="scripts/controllers/datepicker.js"></script>
+    <script src="bower_components/jquery-ui/ui/core.js"></script>
+    <script src="bower_components/jquery-ui/ui/widget.js"></script>
+    <script src="bower_components/jquery-ui/ui/datepicker.js"></script>
+    <script src="bower_components/jquery-ui/ui/position.js"></script>
+    <script src="bower_components/jquery-ui/ui/tooltip.js"></script>
+    <script src="resources/lib/Datatables/js/jquery.dataTables.min.js"></script>
+    <script src="scripts/controllers/forms.js"></script>
+    <script src="scripts/controllers/icons.js"></script>
+    <script src="scripts/controllers/jstree.js"></script>
+    <script src="scripts/controllers/links.js"></script>
+    <script src="scripts/controllers/popups.js"></script>
+    <script src="scripts/controllers/spinner.js"></script>
+    <script src="scripts/controllers/tables.js"></script>
+    <script src="scripts/controllers/tabs.js"></script>
+    <script src="scripts/controllers/typography.js"></script>
+    <script src="scripts/controllers/validations.js"></script>
+    <script src="scripts/controllers/timepicker.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <!-- endbuild -->
+  </div>
+</body>
+</html>

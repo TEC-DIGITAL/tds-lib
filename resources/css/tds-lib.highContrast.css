@@ -1,0 +1,50 @@
+/* ICONS */
+[class^="tds-lib-icon-"], [class*=" tds-lib-icon-"] {
+  color: #FFF;
+}
+[class^="tds-lib-icon"]:hover, [class*=" tds-lib-icon"]:hover { 
+	color: #dbdbb0;
+}
+.tds-lib_active[class^="tds-lib-icon"], .tds-lib_active[class*=" tds-lib-icon"] { 
+	color: #0072C9; 
+}
+.tds-lib-icon-no-hover {
+	color: #FFF !important;
+}
+.tds-lib_title_01, .defautl-text {
+	color: #FFF;
+}
+.tds-lib_title_02 {
+	color: #0161AA;
+}
+.tds-lib_text_01 {
+	color: #FFF;
+}
+label.tds-lib_form, output.tds-lib_form {
+	background: #222222;
+	color: #FFF;
+}
+.tds-lib_form {
+	background: #222;
+	color: #FFF;
+}
+input.tds-lib_form[type="submit"], button.tds-lib_form, .tds-lib_button, .tds-lib_button:link {
+	background: #666;
+	color: #FFF;
+}
+button.tds-lib_form:disabled, button.tds-lib_form:disabled:hover, a.tds-lib_button:disabled, a.tds-lib_button:link:disabled, a.tds-lib_button.introjs-disabled {
+	background: #222;
+	border: 1px solid #666;
+	color: #666;
+}
+table.table {
+	background: #333;
+}
+table.table.table-striped > tbody > tr:nth-of-type(2n+1), table.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > td {
+	background: #666;
+	color: #FFF;
+}
+table.table-striped > tbody > tr:nth-child(2n) > td {
+	background: #000;
+	color: #FFF;
+}

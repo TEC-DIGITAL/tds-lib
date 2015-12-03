@@ -1,0 +1,146 @@
+
+<h1 class="page-header">Tables</h1>
+<h1>Datatable</h1>
+<p>Use 'display' class for Datatable style.</p>
+<div class="table_container">
+<iframe width="100%" height="350" src="//jsfiddle.net/victorvargasramirez/a0tqkf4e/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+
+
+<h2>HTML</h2>
+            <pre style="background:rgba(238,238,238,0.92);color:#000">&lt;table id<span style="color:#00f">=</span><span style="color:#093">"dataTableExample"</span> class<span style="color:#00f">=</span><span style="color:#093">"display"</span> cellspacing<span style="color:#00f">=</span><span style="color:#093">"0"</span> <span style="color:#33f;font-weight:700">width</span><span style="color:#00f">=</span><span style="color:#093">"100%"</span>>
+        &lt;thead>
+            &lt;tr>
+                &lt;th>Name&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Position&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Office&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Age&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Start date&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Salary&lt;<span style="color:#00f">/</span>th>
+            &lt;<span style="color:#00f">/</span>tr>
+        &lt;<span style="color:#00f">/</span>thead>
+        &lt;tfoot>
+            &lt;tr>
+                &lt;th>Name&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Position&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Office&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Age&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Start date&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Salary&lt;<span style="color:#00f">/</span>th>
+            &lt;<span style="color:#00f">/</span>tr>
+        &lt;<span style="color:#00f">/</span>tfoot>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Tiger Nixon&lt;<span style="color:#00f">/</span>td>
+                &lt;td><span style="color:#33f;font-weight:700">System</span> Architect&lt;<span style="color:#00f">/</span>td>
+                &lt;td>Edinburgh&lt;<span style="color:#00f">/</span>td>
+                &lt;td><span style="color:#06f">61</span>&lt;<span style="color:#00f">/</span>td>
+                &lt;td><span style="color:#06f">2011</span><span style="color:#00f">/</span><span style="color:#06f">04</span><span style="color:#00f">/</span><span style="color:#06f">25</span>&lt;<span style="color:#00f">/</span>td>
+                &lt;td>$<span style="color:#06f">320</span>,<span style="color:#06f">800</span>&lt;<span style="color:#00f">/</span>td>
+            &lt;<span style="color:#00f">/</span>tr>
+        &lt;<span style="color:#00f">/</span>tbody>
+    &lt;<span style="color:#00f">/</span>table>
+    </pre>
+    <h2>JavaScript</h2>
+    <p>Get the table element that you want to transform to dataTable</p>
+    <pre style="background:rgba(238,238,238,0.92);color:#000"> <span style="color:#00f">var</span> dataTable <span style="color:#00f">=</span> <span style="color:#00f">$</span>(<span style="color:#093">"#dataTableExample"</span>).datatable();</pre>
+    <h3>Get more information</h3>
+    <div >
+        <a href="http://www.datatables.net" class="text_url_01">www.datatables.net</a>
+    </div>
+    <br>
+    <h2>Bordered table</h2>
+    <p>
+        To use the standard for tables, add class="table table-striped table-bordered" in the <code> &lt;table&gt; </code> html tag.
+        <br>
+            For example:</p>
+                <pre style="background:rgba(238,238,238,0.92);color:#000">&lt;table class<span style="color:#00f">=</span><span style="color:#093">"table table-striped table-bordered"</span>>
+        &lt;thead>
+            &lt;tr>
+                &lt;th>Firstname&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Lastname&lt;<span style="color:#00f">/</span>th>
+                &lt;th>Points&lt;<span style="color:#00f">/</span>th>
+            &lt;<span style="color:#00f">/</span>tr>
+        &lt;<span style="color:#00f">/</span>thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Eve&lt;<span style="color:#00f">/</span>td>
+                &lt;td>Jackson&lt;<span style="color:#00f">/</span>td> 
+                &lt;td><span style="color:#06f">94</span>&lt;<span style="color:#00f">/</span>td>
+            &lt;<span style="color:#00f">/</span>tr>
+            &lt;tr>
+                &lt;td>Pedro&lt;<span style="color:#00f">/</span>td>
+                &lt;td>Leiva&lt;<span style="color:#00f">/</span>td> 
+                &lt;td><span style="color:#06f">100</span>&lt;<span style="color:#00f">/</span>td>
+            &lt;<span style="color:#00f">/</span>tr>
+            &lt;tr>
+                &lt;td>Jose&lt;<span style="color:#00f">/</span>td>
+                &lt;td>Rivera&lt;<span style="color:#00f">/</span>td> 
+                &lt;td><span style="color:#06f">20</span>&lt;<span style="color:#00f">/</span>td>
+            &lt;<span style="color:#00f">/</span>tr>
+        &lt;<span style="color:#00f">/</span>tbody>
+        &lt;tfoot>
+        &lt;<span style="color:#00f">/</span>tfoot>
+    &lt;<span style="color:#00f">/</span>table>
+    </pre>
+
+    <section>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td> 
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>Pedro</td>
+                    <td>Leiva</td> 
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Jose</td>
+                    <td>Rivera</td> 
+                    <td>20</td>
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </section>
+    <br>
+    <h1 class="page-header">Responsive Tables</h1>
+    <p>You only have to add the <span style="color: green">.tds-lib-table-responsive-01</span> class to the table.</p>
+    <table class="table table-striped table-bordered tds-lib-table-responsive-01">
+      <thead>
+        <tr>
+          <th>Payment</th>
+          <th>Issue Date</th>
+          <th>Amount</th>
+          <th>Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Payment">Payment #1</td>
+          <td data-label="Issue Date">02/01/2015</td>
+          <td data-label="Amount">$2,311</td>
+          <td data-label="Period">01/01/2015 - 01/31/2015</td>
+        </tr>
+        <tr>
+          <td data-label="Payment">Payment #2</td>
+          <td data-label="Issue Date">03/01/2015</td>
+          <td data-label="Amount">$3,211</td>
+          <td data-label="Period">02/01/2015 - 02/28/2015</td>
+        </tr>
+      </tbody>
+    </table>
+    <h1 class="page-header">How it works?</h1>
+    <iframe width="100%" height="300" src="//jsfiddle.net/victorvargasramirez/cz06sv2o/embedded/result,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+

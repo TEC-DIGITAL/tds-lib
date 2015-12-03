@@ -1,0 +1,186 @@
+<h1 class="page-header">Icons</h1>
+<p>The new way of use icons in TEC-Digital it's using fonts. It gives you scalable vector icons that can instantly be customized with CSS(size, color, drop shadow, and anything that can be done CSS).</p>
+<p>This fonts are designed to be used with inline elements (like the <code>&lt;span&gt;</code>, <code>&lt;div&gt;</code>, etc; but using a <code>&lt;i&gt;</code> is more semantically correct). </p>
+<br>
+<p>You can place Font icons just about anywhere using in the class the icon's name.</p>
+
+<h1 class="page-header">Active</h1>
+<p>If you need an icon active, just add the class tds-lib_active.</p>
+<code style="margin-left:px;">&lt;i class="tds-lib-icon-communities tds-lib-40x tds-lib_active"&gt;&lt;/i&gt;</code><br>
+<h2>Example:</h2>
+<i class="tds-lib-icon-communities tds-lib-40x tds-lib_active"></i>
+
+<h1 class="page-header">No hover</h1>
+<p>If you need an icon without hover effect, just add the class tds-lib-icon-no-hover.</p>
+<code style="margin-left:px;">&lt;i class="tds-lib-icon-communities tds-lib-40x tds-lib-icon-no-hover"&gt;&lt;/i&gt;</code><br>
+<h2>Example:</h2>
+<i class="tds-lib-icon-communities tds-lib-40x tds-lib-icon-no-hover"></i>
+
+<h1 class="page-header">Sizes</h1>
+<p>To increase icon sizes relative to their container, use the classes tds-lib-16x, tds-lib-18x, tds-lib-28x, tds-lib-32x or tds-lib-40x.</p>
+<i class="tds-lib-icon-communities tds-lib-16x"></i><code>&lt;i class="tds-lib-icon-communities tds-lib-16x"&gt;&lt;/i&gt;</code><br>
+<i class="tds-lib-icon-communities tds-lib-18x"></i><code>&lt;i class="tds-lib-icon-communities tds-lib-18x"&gt;&lt;/i&gt;</code><br>
+<i class="tds-lib-icon-communities tds-lib-28x"></i><code>&lt;i class="tds-lib-icon-communities tds-lib-28x"&gt;&lt;/i&gt;</code><br>
+<i class="tds-lib-icon-communities tds-lib-32x"></i><code>&lt;i class="tds-lib-icon-communities tds-lib-32x"&gt;&lt;/i&gt;</code><br>
+<i class="tds-lib-icon-communities tds-lib-40x"></i><code>&lt;i class="tds-lib-icon-communities tds-lib-40x"&gt;&lt;/i&gt;</code><br>
+<h1 class="page-header">Menu icons</h1>
+
+<div class="tds-lib_menu-container">
+	<i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"></i>
+	<label>Menú</label>
+</div>
+<h1>Menu icons with active property</h1>
+<div class="tds-lib_menu-container-active">
+	<i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"></i>
+	<label>Menú</label>
+</div>
+
+<p>Use the following structure when you want to use a menu icon with a label.</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;div class<span style="color:#00f">=</span><span style="color:#093">"tds-lib_menu-container"</span>>
+    &lt;i id<span style="color:#00f">=</span><span style="color:#093">"example_menu"</span> class<span style="color:#00f">=</span><span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"</span>>&lt;<span style="color:#00f">/</span>i>
+    &lt;<span style="color:#33f;font-weight:700">label</span>>Menú&lt;<span style="color:#00f">/</span><span style="color:#33f;font-weight:700">label</span>>
+&lt;<span style="color:#00f">/</span>div></pre>
+
+
+<p>Can also be used with HTML lists (ul and ol elements).</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;ul class<span style="color:#00f">=</span><span style="color:#093">"tds-lib_menu-container"</span>>
+    &lt;li>
+        &lt;i id<span style="color:#00f">=</span><span style="color:#093">"example_menu"</span> class<span style="color:#00f">=</span><span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"</span>>&lt;<span style="color:#00f">/</span>i>
+        &lt;<span style="color:#33f;font-weight:700">label</span>>Menú&lt;<span style="color:#00f">/</span><span style="color:#33f;font-weight:700">label</span>>
+    &lt;<span style="color:#00f">/</span>li>
+&lt;<span style="color:#00f">/</span>ul></pre>
+
+<h1 class="page-header">Pointers</h1>
+if you whant an specific pointer as hover of an icon you can use the followings clases:
+<div class="table_container">
+	<table class="table">
+		<thead>
+			<th>Class</th>
+			<td>Description</td>
+			<th>Example</th>
+		</thead>
+		<tbody>
+			<!--TITLE 01-->
+			<tr>
+				<td>.tds-lib-icon-context-menu</td>
+				<td>The cursor indicates that a context-menu is available</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-context-menu tds-lib-32x"></i></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"</span>>&lt;/i></pre>
+				</td>
+			</tr>
+			<!--TITLE 02-->
+			<tr>
+				<td>.tds-lib-icon-help</td>
+				<td>The cursor indicates that help is available</td>
+				<td><i id="example_menu" class="tds-lib-icon-help tds-lib-icon-help tds-lib-32x"></i></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-help tds-lib-icon-help tds-lib-32x"</span>>&lt;/i></pre>
+				</td>
+			</tr>
+		<!--TITLE 03-->
+			<tr>
+				<td>.tds-lib-icon-none</td>
+				<td> 	No cursor is rendered for the element.</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-none tds-lib-32x"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-none tds-lib-32x"</span>></pre>
+				</td>
+			</tr>
+		<!--TITLE 04-->
+			<tr>
+				<td>.tds-lib-icon-not-allowed</td>
+				<td>The cursor indicates that the requested action will not be executed.</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-not-allowed tds-lib-32x"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-not-allowed tds-lib-32x"</span>></pre>
+				</td>
+			</tr>
+		<!--TITLE 05-->
+			<tr>
+				<td>.tds-lib-icon-pointer</td>
+				<td> 	The cursor is a pointer and indicates a link or an action.</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-pointer tds-lib-32x"</span>></pre>
+				</td>
+			</tr>
+		<!--TITLE 06-->
+			<tr>
+				<td>.tds-lib-icon-zoom-in</td>
+				<td> 	The cursor indicates that something can be zoomed in.</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-zoom-in tds-lib-32x"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-zoom-in tds-lib-32x"</span>></pre>
+				</td>
+			</tr>
+		<!--TITLE 07-->
+			<tr>
+				<td>.tds-lib-icon-zoom-out</td>
+				<td> 	The cursor indicates that something can be zoomed out.</td>
+				<td><i id="example_menu" class="tds-lib-icon-menu1 tds-lib-icon-zoom-out tds-lib-32x"></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>Code example</h1>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i <span style="font-weight:700">id</span>=<span style="color:#093">"example_menu"</span> class=<span style="color:#093">"tds-lib-icon-menu1 tds-lib-icon-zoom-out tds-lib-32x"</span>></pre>
+				</td>
+			</tr>
+		</tdoby>
+	</table>
+</div>
+<h1 class="page-header">Spin thins!</h1>
+<p>To spin an icon just add the <span style="color:#093">.tds-lib-spin</span> class to the icon.</p>
+<div class="table_container">
+	<table class="table">
+		<thead>
+			<th>Class</th>
+			<th>Example</th>
+			<th>Code example</th>
+		</thead>
+		<tbody>
+			<!--SPIN-->
+			<tr>
+				<td>.tds-lib-icon-add</td>
+				<td><i class="tds-lib-icon-load tds-lib-spin"></i></td>
+				<td><pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i class=<span style="color:#093">"tds-lib-icon-load tds-lib-spin"</span>>&lt;/i></pre></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<h1 class="page-header">Catalog</h1>
+<div class="table_container">
+	<table class="table">
+		<thead>
+			<th>Class</th>
+			<th>Example</th>
+			<th>Code example</th>
+		</thead>
+		<tbody>
+			<!--ICONS-->
+			<tr ng-repeat="icon in iconsList">
+				<td>.{{ icon }}</td>
+				<td><i class="{{ icon }}"></i></td>
+				<td><pre style="background:rgba(238,238,238,0.92);color:#000">&lt;i class=<span style="color:#093">"{{ icon }}"</span>>&lt;/i></pre></td>
+			</tr>		
+		</tbody>
+	</table>
+</div>
